@@ -12,7 +12,7 @@ variable "repository_description" {
 
 variable "visibility" {
   description = "Repo to be made private or public"
-  type        = bool
+  type        = string
   default     = false
 }
 
