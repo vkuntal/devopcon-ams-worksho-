@@ -15,3 +15,16 @@ variable "repository_private" {
   type        = bool
   default     = false
 }
+
+variable "github_token" {
+  description = "Token for github auth to create repo"
+  type        = string
+  sensitive   = true
+}
+
+
+variable "github_owner" {
+  description = "Owner of the github repo"
+  type        = string
+  sensitive   = true
+}
