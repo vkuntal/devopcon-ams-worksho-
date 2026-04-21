@@ -1,5 +1,5 @@
 resource "github_repository" "repo_devops" {
-  name          = "devopscon-rep"
-  description   = "test description"
-  private       = true
+  name          = var.repository_name
+  description   = var.repository_description
+  private       = var.repository_private
 }
