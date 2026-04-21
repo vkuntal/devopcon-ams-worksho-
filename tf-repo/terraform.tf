@@ -1,5 +1,4 @@
 terraform {
-  required_version = ">= 0.14"
 
   required_providers {
     github = {
@@ -19,7 +18,7 @@ terraform {
       version = ">= 0.12.0, < 1.0.0"
     }
   }
-  
+
     # see https://developer.hashicorp.com/terraform/language/settings#specifying-a-required-terraform-version
        required_version = ">= 1.14.0, < 2.0.0"
   
