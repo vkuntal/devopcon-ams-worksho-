@@ -10,7 +10,7 @@ variable "repository_description" {
 }
 
 
-variable "repository_private" {
+variable "visibility" {
   description = "Repo to be made private or public"
   type        = bool
   default     = false
