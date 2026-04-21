@@ -1,6 +1,7 @@
 output "github_repositories_list" {
   description = "Exported List of Repositories of the `github_repositories.main` Data Source."
   value       = data.github_repositories.main
+  sensitivie = true
 }
 
 output "github_repositories" {
@@ -13,6 +14,7 @@ output "github_repositories" {
 output "github_user" {
   description = "Exported Attributes of the `github_user.main` Data Source."
   value       = data.github_user.main
+  sensitive = true
 }
 
 # Option 2: GitHub Organization
