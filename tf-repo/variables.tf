@@ -13,5 +13,5 @@ variable "repository_description" {
 variable "repository_private" {
   description = "Repo to be made private or public"
   type        = bool
-  defalut     = false
+  default     = false
 }
