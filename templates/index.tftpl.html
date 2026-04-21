@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+  <head>
+    <link rel="stylesheet" href="https://unpkg.com/chota@0.8.1/dist/chota.min.css" integrity="sha384-tSoYnRUCzsL3lLzDB6qyBeG9Up6+pYuSxusMGYz0GBqAomc3yVY7WFzMIirjXxW4" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha384-PPIZEGYM1v8zp5Py7UjFb79S58UeqCL9pYVnVPURKEqvioPROaVAJKKLzvH2rDnI" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/styles.css" />
+
+    <title>${name} &mdash; ${description}</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+
+    <meta name="description" content="${description}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="${theme_color}" />
+
+    <meta name="twitter:description" content="${description}" />
+    <meta name="twitter:image" content="${image}">
+    <meta name="twitter:title" content="${name}" />
+
+    <meta property="og:description" content="${description}">
+    <meta property="og:image" content="${image}">
+    <meta property="og:title" content="${name}">
+    <meta property="og:type" content="website" />
+  </head>
+
+  <body id="top">
+    <a href="#top" id="scroll-to-top">scroll to top <i class="fa-solid fa-arrow-up"></i></a>
+
+    <div class="container">
+      <div class="hero">
+          <h1><img src="${image}" alt="${name}" title="${name}" height="38" width="38"> ${name}</h1>
+          <h2>${description}</h2>
+          <a href="https://github.com/${github_user}" class="button icon-only github" aria-label="GitHub profile"><i class="fa-brands fa-github text-white"></i></a>
+
+      </div>
+
+      <section id="repositories">
+        <h2>
+          <i class="fa-brands fa-github"></i> Repositories
+        </h2>
+
+        <div class="row">
+          %{~ for repository in repositories ~}
+          <div class="col-12 card">
+            <header>
+              <h4>
+                <a href="${repository.html_url}"
+                  ><samp class="text-primary">${repository.full_name}</samp></a
+                >
+              </h4>
+            </header>
+
+            <div class="row">
+              <div class="col">
+                <p>${repository.description}</p>
+              </div>
+            </div>
+
+            <footer>
+              <div class="row">
+                <!--
+            <div class="col">
+              %{~ if length(repository.topics) > 0 ~}
+              <i class="clear fa-thin fa-tags"></i>&nbsp;
+              %{~ endif ~}
+              %{~ for topic in repository.topics ~}
+              <a href="https://github.com/search?q=topic%3A${topic}+${query}" class="bg-${topic} topic">
+                %{~ if topic == "boundary" ~}
+                <i class="fak fa-boundary"></i> Boundary
+                %{~ endif ~}%{~ if topic == "consul" ~}
+                <i class="fak fa-consul"></i> Consul
+                %{~ endif ~}%{~ if topic == "nomad" ~}
+                <i class="fak fa-nomad"></i> Nomad
+                %{~ endif ~}%{~ if topic == "packer" ~}
+                <i class="fak fa-packer"></i> Packer
+                %{~ endif ~}%{~ if topic == "terraform" ~}
+                <i class="fak fa-terraform"></i> Terraform
+                %{~ endif ~}%{~ if topic == "vagrant" ~}
+                <i class="fak fa-vagrant"></i> Vagrant
+                %{~ endif ~}%{~ if topic == "vault" ~}
+                <i class="fak fa-vault"></i> Vault
+                %{~ endif ~}%{~ if topic == "waypoint" ~}
+                <i class="fak fa-waypoint"></i> Waypoint
+                %{~ endif ~}
+              </a>&nbsp;
+              %{~ endfor ~}
+            </div>
+            -->
+              </div>
+            </footer>
+          </div>
+          %{~ endfor ~}
+        </div>
+      </section>
+    </div>
+
+    <footer class="bg-dark text-center">
+      <div class="text-light">
+        crafted with <i class="fa-solid fa-heart text-white"></i> by <a href="https://github.com/${github_user}" class="text-white"><strong>${name}</strong></a>
+      </div>
+    </footer>
+
+  <script>
+    // get button by ID
+    let scrollToTopButton = document.getElementById("scroll-to-top");
+
+    // show button when user scrolls more than 20px from the top of the Document
+    window.onscroll = function() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollToTopButton.style.display = "block";
+      } else {
+        scrollToTopButton.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>

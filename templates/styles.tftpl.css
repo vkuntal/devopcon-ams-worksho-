@@ -1,0 +1,103 @@
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --color-primary: ${theme_color};
+  --color-tag-dark: #24292f;
+  --color-tag-light: #f5f5f5;
+  --bgcolor-boundary: #ec585d;
+  --bgcolor-consul: #dc477d;
+  --bgcolor-nomad: #60dea9;
+  --bgcolor-packer: #63d0ff;
+  --bgcolor-terraform: #844fba;
+  --bgcolor-vagrant: #2e71e5;
+  --bgcolor-vault: #ffec6e;
+  --bgcolor-waypoint: #62d4dc;
+}
+
+body > .container {
+  max-width: 1024px;
+}
+
+footer.bg-dark {
+  background-color: var(--color-primary) !important;
+}
+
+.hero h1 {
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+body > footer {
+  padding: 4rem;
+}
+
+a.button.dark:hover {
+  background-color: var(--color-primary);
+  color: var(--color-tag-dark);
+}
+
+.bg-boundary {
+  background-color: var(--bgcolor-boundary);
+  color: var(--color-tag-light);
+}
+
+.bg-consul {
+  background-color: var(--bgcolor-consul);
+  color: var(--color-tag-light);
+}
+
+.bg-nomad {
+  background-color: var(--bgcolor-nomad);
+  color: var(--color-tag-dark);
+}
+
+.bg-packer {
+  background-color: var(--bgcolor-packer);
+  color: var(--color-tag-dark);
+}
+
+.bg-terraform {
+  background-color: var(--bgcolor-terraform);
+  color: var(--color-tag-light);
+}
+
+.bg-vagrant {
+  background-color: var(--bgcolor-vagrant);
+  color: var(--color-tag-light);
+}
+
+.bg-vault {
+  background-color: var(--bgcolor-vault);
+  color: var(--color-tag-dark);
+}
+
+.bg-waypoint {
+  background-color: var(--bgcolor-waypoint);
+  color: var(--color-tag-dark);
+}
+
+.topic {
+  padding: 4px 6px;
+}
+
+section {
+  margin: 5rem auto;
+}
+
+#scroll-to-top {
+  display: block;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+}
+
+.twitter {
+  background-color: #1da1f2;
+}
+
+.github {
+  background-color: #000;
+}
