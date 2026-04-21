@@ -28,3 +28,9 @@ variable "github_owner" {
   type        = string
   sensitive   = true
 }
+
+variable "website_theme_color" {
+  description = "Website Theme color."
+  default     = "#d74117" # DevOpsCon orange
+  type        = string
+}
